@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Righteous&display=swap');
+* {
+    font-family: Heebo;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+body {
+    background-image: url('/images/bround2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*LOG IN PAGE*/
+
+.logo {
+    display: block;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+}
+
+.loginDiv {
+    border-radius: 30px;
+    padding: 20px;
+    margin: 50px;
+    background-color: antiquewhite;
+    align-content: center;
+}
+
+.loginDiv h1 {
+    align-content: center;
+    text-align: center;
+}
+
+.loginLabel {
+    align-content: center;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginInput {
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    outline: none;
+    height: 40px;
+}
+
+.userNameInput,
+.passWordInput,
+.confirmPassword {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    outline: none;
+    height: 40px;
+}
+
+.usernameField {
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginBtn {
+    display: block;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 20%;
+    margin-top: 20px;
+}
+
+.loginDiv h4 {
+    color: black;
+    align-content: center;
+    text-align: center;
+}
+
+
+/*END OF LOGIN PAGE*/
+
+
+/*SIGN UP PAGE*/
+
+.registerDiv h4 {
+    align-content: center;
+    text-align: center;
+}
+
+.registerDiv {
+    border-radius: 30px;
+    padding: 20px;
+    margin: 50px;
+    background-color: antiquewhite;
+    align-content: center;
+    width: 500px;
+    margin: auto;
+}
+
+.registerDiv h1 {
+    align-content: center;
+    text-align: center;
+}
+
+.registerDiv h4 {
+    color: black;
+}
+
+.registerLabel {
+    align-content: center;
+    text-align: center;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registerField {
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerBtn {
+    display: block;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 20%;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+
+/*END OF SIGN UP PAGE*/
+
+
+/*SURVEY PAGE*/
+
+.surveyDiv {
+    border-radius: 30px;
+    padding: 40px;
+    margin: 50px auto;
+    width: 75%;
+    background-color: antiquewhite;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.surveyDiv h2 {
+    align-content: center;
+    text-align: center;
+}
+
+.surveyDiv p {
+    align-content: center;
+    text-align: center;
+    font: bolder;
+}
+
+.candidateSourceForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.linkedInIcon {
+    width: 50px;
+}
+
+.otherIcon {
+    width: 50px;
+}
+
+.friendRelativeIcon {
+    width: 50%;
+}
+
+.schoolIcon {
+    width: 50px;
+}
+
+.source {
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(252, 225, 185);
+    box-sizing: border-box;
+    border-radius: 10px;
+    justify-content: center;
+    align-content: center;
+    border-width: 15px;
+    border-color: black;
+    height: 160px;
+    width: 156px;
+}
+
+.row1,
+.row2 {
+    display: flex;
+}
+
+.instructions {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.interviewers {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.aboutBoxfusionForm {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+.codingExercise {
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.compatibleForms {
+    justify-content: center;
+    align-content: center;
+}
+
+#compatibleScroll {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.aptitude {
+    align-content: center;
+    text-align: center;
+}
+
+.personalityAssessment {
+    text-align: center;
+}
+
+.yesNo {
+    background-color: rgb(252, 225, 185);
+    border-radius: 15px;
+    width: 156px;
+    align-content: center;
+    padding: 15px;
+    justify-items: center;
+    justify-self: unset;
+}
+
+#star1,
+#star2,
+#star3,
+#star4,
+#star5 {
+    width: 50px;
+    height: 50px;
+}
+
+.surveySubmit {
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    border-color: bisque;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+
+/*END OF SURVEY PAGE*/
+
+
+/*BEGINNING OF ADMIN PAGE*/
+
+.adminDiv {
+    border-radius: 30px;
+    padding: 50px;
+    margin: 50px auto;
+    width: 75%;
+    background-color: antiquewhite;
+    align-content: center;
+}
+
+.adminDiv h1,
+p3 {
+    text-align: center;
+}
+
+#topNav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    padding: 10px;
+    background-color: antiquewhite;
+    width: 100%;
+}
+
+#topNav a {
+    color: black;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.adminLogo {
+    width: 200px;
+    float: left;
+}
+
+.topRow {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.numSurveys {
+    margin: 30px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(194, 157, 112);
+    border-radius: 15px;
+}
+
+.numSurveys label {
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.numInteractedUsers {
+    margin: 30px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(194, 157, 112);
+    border-radius: 15px;
+}
+
+.numInteractedUsers label {
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+#recentInteractions {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#recentInteractions th {
+    height: 90px;
+}
+
+#recentInteractions tr,
+th {
+    border: 1px solid;
+}
+
+h4 {
+    margin: auto;
+    color: rgb(48, 189, 142);
+    text-align: center;
+    font-weight: 600;
+}
+
+h3 {
+    color: lightcoral;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.newSurvey {
+    margin-left: 790px;
+    width: 300px;
+    border-radius: 30px;
+    border-color: rgb(93, 109, 122);
+    font-weight: 600;
+    height: 40px;
+    right: 500px;
+}
+
+.open {
+    border-radius: 15px;
+    width: 100px;
+    padding: 10px;
+}
+
+
+/*BEGINNING OF SURVEY VIEWS PAGE*/
+
+.choose {
+    text-align: center;
+}
+
+.survey {
+    border-radius: 15px;
+    background-color: beige;
+    padding: 25px;
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: x-large;
+    font-weight: 700;
+    flex: 1;
+    width: 90%;
+}
+
+.survey li {
+    list-style: none;
+}
+
+.seeResults,
+.open {
+    border-radius: 25px;
+    width: 100px;
+    padding: 10px;
+    border-color: burlywood;
+    color: darkslategray;
+}
+
+.submit {
+    border-radius: 15px;
+    width: 100px;
+    padding: 10px;
+    border-color: burlywood;
+    color: darkslategray;
+}
+
+.userImage {
+    width: 50px;
+}
+
+
+/*BEGINNING OF CREATE SURVEY PAGE*/
+
+.popUp {
+    display: none;
+    position: fixed;
+    align-items: center;
+    margin: auto;
+    border: 1px solid;
+    border-color: bisque;
+    padding: 20px;
+    left: 300px;
+    width: 50%;
+    max-height: fit-content;
+    height: 90vh;
+    top: 0;
+    z-index: 1;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: azure;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.popUp form {
+    background-color: rgb(250, 244, 235);
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+}
+
+.popUp h2 {
+    text-align: center;
+}
+
+.popUp img {
+    align-items: center;
+    align-content: center;
+}
+
+.createSurvey {
+    margin-left: 180px;
+    width: 45%;
+    border-radius: 40px;
+    border-color: rgb(93, 109, 122);
+    font-weight: 600;
+    height: 40px;
+}
+
+#darken {
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.SurveyNameDiv {
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    padding: 50px;
+}
+
+
+/*SELECTED SURVEY*/
+
+.selectedSurvey {
+    border-radius: 30px;
+    padding: 20px;
+    margin: 50px;
+    background-color: antiquewhite;
+    align-content: center;
+}

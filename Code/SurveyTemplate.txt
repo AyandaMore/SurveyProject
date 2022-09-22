@@ -1,0 +1,28 @@
+Ayanda Survey Idea.
+
+Boxfusion Interview Feedback Survey.
+Purpose: To get feedback from candidates about their interview experience.
+
+1. Assessment Centre Survey
+  SECTION 1
+  - Where did you hear about Boxfusion?
+  - Do you have a clear idea of what Boxfusion is about?
+  - How compatible do you think you are with Boxfusion?
+  SECTION 2
+  - Were the instructions clear for every activity?
+  - Did the recruiters correctly answer questions that were asked?
+  - How clear were the questions for the Aptitude test?
+  - Rate the difficulty of the coding exercise.
+  - How clear were the questions for the personality assessment?
+  
+
+
+
+
+  
+2. One-On-One Interview Survey
+  - How was your overall experience in the interview?
+  - Did the interviewers ask the appropriate questions?
+  - Did the interviewers disclose what you should expect from the graduate programme?
+  - Did the interviewers make you feel comfortable?
+  - Optional: Suggestions. 

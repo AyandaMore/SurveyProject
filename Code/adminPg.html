@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="topNav">
+        <img src="/images/officialLogo.png" class="adminLogo">
+        <br>
+        <a href="#home">Home</a>
+        <a href="#activeSurveys">Surveys</a>
+        <a href="#users">Users</a>
+        <a href="/loginPg.html">Sign Out</a>
+
+    </div>
+
+    <div id="home">
+        <div class="topRow">
+            <div class="numSurveys">
+                <img src="/images/totalSurveysIcon.png">
+                <label id="totalSurveys"></label>
+            </div>
+
+            <div class="numInteractedUsers">
+                <img src="/images/usersInteracted.png">
+                <label id="usersInteracted">Users</label>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+
+    <div id="activeSurveys">
+        <h1>Surveys <button type="submit" class="newSurvey" id="newSurvey">Create New Survey</button></h1>
+
+    </div>
+
+    <div id="users">
+        <h1>User Interactions</h1>
+    </div>
+
+    <div id="darken">
+        <div class="popUp" id="popUp">
+            <img src="/images/officialLogo.png" class="logo" id="logo">
+            <h2></h2>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+    <script src="./adminPgScript.js"></script>
+</body>
+
+</html>

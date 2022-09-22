@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class=".survey">
+        <h1> Survey Results </h1>
+        <!--<canvas id="myChart" style="width:100%;max-width:600px"></canvas>-->
+
+        <canvas id="resultChart1" style="width:100%;max-width:600px"></canvas>
+    </div>
+
+    <script>
+        var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = [
+            "rgba(255,0,0,1.0)",
+            "rgba(255,0,0,0.8)",
+            "rgba(255,0,0,0.6)",
+            "rgba(255,0,0,0.4)",
+            "rgba(255,0,0,0.2)"
+        ];
+
+        var xVals = ["Italy", "France", "Spain", "USA", "Argentina"];
+        var yVals = [55, 49, 44, 24, 15];
+        var barColors = [
+            "rgba(255,0,0,1.0)",
+            "rgba(255,0,0,0.8)",
+            "rgba(255,0,0,0.6)",
+            "rgba(255,0,0,0.4)",
+            "rgba(255,0,0,0.2)"
+        ];
+
+        new Chart("resultChart1", {
+            type: "bar",
+            data: {
+                labels: xVals,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yVals
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                }
+            }
+        });
+
+        // new Chart("myChart", {
+        //     type: "bar",
+        //     data: {
+        //         labels: xValues,
+        //         datasets: [{
+        //             backgroundColor: barColors,
+        //             data: yValues
+        //         }]
+        //     },
+        //     options: {
+        //         legend: {
+        //             display: false
+        //         },
+        //         scales: {
+        //             yAxes: [{
+        //                 ticks: {
+        //                     beginAtZero: true
+        //                 }
+        //             }],
+        //         }
+        //     }
+        // });
+
+
+
+        //call 
+
+        renderQuestions('HH_P3H6r');
+
+
+
+        //FUNCTIONS 
+        async function getSurveys() {
+            let url = 'http://localhost:3000/surveys';
+            try {
+                let res = await fetch(url, {
+                    method: "GET", // *GET, POST, PUT, DELETE, etc.
+                    mode: "cors", // no-cors, *cors, same-origin
+                    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: "same-origin", // include, *same-origin, omit
+                    headers: {
+                        "Content-Type": "application/json",
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    redirect: "follow", // manual, *follow, error
+                    referrerPolicy: "no-referrer",
+                });
+                return await res.json();
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+
+
+        async function getQuestions() {
+            let url = 'http://localhost:3000/surveyQs';
+            try {
+                let res = await fetch(url, {
+                    method: "GET", // *GET, POST, PUT, DELETE, etc.
+                    mode: "cors", // no-cors, *cors, same-origin
+                    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: "same-origin", // include, *same-origin, omit
+                    headers: {
+                        "Content-Type": "application/json",
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    redirect: "follow", // manual, *follow, error
+                    referrerPolicy: "no-referrer",
+                });
+                return await res.json();
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        async function getSurveyResponseAnswers() {
+            let url = 'http://localhost:3000/surveyRAs';
+            try {
+                let res = await fetch(url, {
+                    method: "GET", // *GET, POST, PUT, DELETE, etc.
+                    mode: "cors", // no-cors, *cors, same-origin
+                    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                    credentials: "same-origin", // include, *same-origin, omit
+                    headers: {
+                        "Content-Type": "application/json",
+                        // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    redirect: "follow", // manual, *follow, error
+                    referrerPolicy: "no-referrer",
+                });
+                return await res.json();
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+
+
+
+        async function renderQuestions(surveyId) {
+            const questions = await getQuestions();
+            const answers = await getSurveyResponseAnswers();
+
+
+
+            questions.forEach(question => {
+                let countYes = 0;
+                let countNo = 0;
+                let count1 = 0;
+                let count2 = 0;
+                let count3 = 0;
+                let count4 = 0;
+                let count5 = 0;
+                var yVal;
+                var xVal;
+
+                if (question.FromSurvey == surveyId) {
+                    //heading
+                    const heading = document.createElement("h2");
+                    heading.classList.add = "resultsHeading";
+                    heading.innerHTML = question.Question;
+
+                    //create chart
+                    //<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                    let chart = document.createElement("canvas");
+                    chart.setAttribute('id', 'myChart');
+                    chart.style.width = "100%";
+                    chart.style.maxWidth = "600px";
+
+
+                    //vals 
+                    if (question.QuestionType == "yesNo") {
+                        xVal = ["Yes", "No"]
+                        answers.forEach(answer => {
+                            if (answer.QuestionId == question.QuestionId) {
+                                if (answer.Answer == "Yes") {
+                                    countYes++;
+                                } else {
+                                    countNo++;
+                                }
+                            }
+                            yVal = [countYes, countNo];
+                            let barColors = [
+                                "rgba(255,0,0,1.0)",
+                                "rgba(255,0,0,0.8)"
+                            ];
+
+                        })
+                    } else {
+                        xVal = ["1", "2", "3", "4", "5"];
+                        answers.forEach(answer => {
+                            if (answer.QuestionId == question.QuestionId) {
+                                if (answer.Answer == '1') {
+                                    count1++;
+                                } else if (answer.Answer == '2') {
+                                    count2++;
+                                } else if (answer.Answer == '3') {
+                                    count3++;
+                                } else if (answerAnswer == '4') {
+                                    count4++;
+                                } else {
+                                    count5++;
+                                }
+                            }
+
+                            yVal = [count1, count2, count3, count4, count5];
+                            let barColors = [
+                                "rgba(255,0,0,1.0)",
+                                "rgba(255,0,0,0.8)",
+                                "rgba(255,0,0,0.6)",
+                                "rgba(255,0,0,0.4)",
+                                "rgba(255,0,0,0.2)"
+                            ];
+                        })
+                    }
+
+
+                }
+
+                //here
+                new Chart("myChart", {
+                    type: "bar",
+                    data: {
+                        labels: xVal,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yVal
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }],
+                        }
+                    }
+                });
+            })
+        }
+    </script>
+
+</body>
+
+</html>
